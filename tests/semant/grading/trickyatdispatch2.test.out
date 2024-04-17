@@ -1,0 +1,2 @@
+Line 10: Expression type A does not conform to declared static dispatch type B.
+Compilation halted due to static semantic errors.

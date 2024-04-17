@@ -1,0 +1,3 @@
+#3 STR_CONST "(*"
+#3 ERROR "Unmatched *)"
+#3 STR_CONST "*)(*"

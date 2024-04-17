@@ -1,0 +1,52 @@
+#9
+_program
+  #1
+  _class
+    Main
+    Object
+    (
+    #1
+    _method
+      main
+      Int
+      #1
+      _int
+        0
+      : Int
+    )
+  #5
+  _class
+    D
+    Object
+    (
+    #4
+    _method
+      inky
+      #4
+      _formal
+        b
+        Int
+      Object
+      #4
+      _int
+        1
+      : Int
+    )
+  #9
+  _class
+    E
+    D
+    (
+    #8
+    _method
+      inky
+      #8
+      _formal
+        c
+        Int
+      Object
+      #8
+      _int
+        1
+      : Int
+    )
