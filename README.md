@@ -2,13 +2,13 @@
 `coolr` is a compiler for the COOL programming language targeting 32-bit x86 architecture on Linux. It is written in C++ using only standard libraries - no lexing or parsing generators are used.
 
 ## Why?
-After completing the [*Compilers* course from StanfordOnline](https://www.edx.org/learn/computer-science/stanford-university-compilers), I had produced my very first working compiler. I was quite happy with this achievement, yet I somehow felt a bit dissatisfied.
+After completing the [*Compilers* course from StanfordOnline](https://www.edx.org/learn/computer-science/stanford-university-compilers), I had produced my very first working compiler. While I was quite happy with this achievement, I felt a lingering dissatisfaction.
 
-- I didn't really understand how the modules of my compiler powered by Flex and Bison worked; the inner workings of those tools still seemed like magic to me.
-- I didn't really understand the support code provided by the course instructors. It made the assignments much more manageable, but it felt like cheating, especially in regards to the abstract syntax tree and other important data structures.
+- I didn't like relying on Flex, Bison, and the instructor-provided code. I wanted to understand every detail of the inner workings of my compiler. 
+- I didn't like the whole `./lexer | ./parser | ./semant | ./codegen` thing. I wanted a single executable.
 - I didn't like using the SPIM emulator to execute my compiled programs. I wanted my compiler to produce x86 code I could actually run directly on my own machine and debug with gdb. 
 
-To satisfy my compiler cravings, I decided to `rm -rf` my existing course project and start from scratch - no Flex, no Bison, no support code and no SPIM. This repository contains the result of this venture.
+To this end, I decided to `rm -rf` my existing course project and start from scratch - no Flex, no Bison, no support code and no SPIM. This repository contains the result of this venture.
 
 ## About COOL
 COOL (*Classroom Object-Oriented Language*) is a programming language designed for teaching compiler construction. For a language designed as a teaching tool, it is actually fairly complex and includes features such as:
@@ -23,16 +23,16 @@ A precise and formal description of the language is given in the COOL manual by 
 To try out the compiler, simply clone the repository and build the project. This requires C++17 or later.
 
 ```
-git clone https://github.com/JeppW/coolr
-cd coolr
-make coolr
+$ git clone https://github.com/JeppW/coolr
+$ cd coolr
+$ make coolr
 ```
 
 Once completed, you can compile a program using `./coolr filename.cl`. A few examples have been provided in `examples/`. This will output a NASM file which you can assemble into a working binary with the provided `assemble.sh` script.
 
 ```
-~# ./coolr examples/hello_world.cl --out out.S && scripts/assemble.sh out.S myprogram
-~# ./myprogram
+$ ./coolr examples/hello_world.cl --out out.S && scripts/assemble.sh out.S myprogram
+$ ./myprogram
 Hello, world!
 ```
 
@@ -48,6 +48,6 @@ __All tests are currently passing__. You can run the tests yourself by navigatin
 This compiler is divided into four modules: a lexical analyzer, a parser, a semantic analyzer and a code generator. The inner workings of each of the four modules are described in detail in the README files in their respective subfolders in `src/compiler`. 
 
 ## Issues
-As it turns out, making compilers is pretty complicated. I have fixed a number of obscure bugs and I would expect more still persist. If you decide to give this compiler a spin and encounter a problem, I would love to know about it, so feel free to raise an issue. 
+As it turns out, making compilers is pretty complicated. I have fixed a number of obscure bugs and I would expect more still persist. If you decide to give this compiler a spin and encounter a problem, I would love to know about it. 
 
 
